@@ -1,4 +1,5 @@
 import Categories from './components/Categories';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Jokes from './components/Jokes';
@@ -11,6 +12,7 @@ function App() {
       <Hero/>
       <Categories/>
       <Jokes/>
+      <Footer/>
     </div>
   );
 }

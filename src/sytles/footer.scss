@@ -1,0 +1,20 @@
+.footer {
+    background-image: url(../assets/img/bitmap_2@2x.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+    padding: 3rem 0;
+
+    &  h4 {
+        font-size: 1.5rem;
+    }
+
+    &  .btn {
+        color: $primary-color;
+        text-transform: uppercase;
+        border: none;
+        background-color: transparent;
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+}
