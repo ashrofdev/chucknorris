@@ -17,7 +17,12 @@ body {
     grid-column: 2/10;
 }
 
+p {
+    font-size: .9rem
+}
+
 @import './variables.scss';
 @import './categories.scss';
 @import './header.scss';
 @import './hero.scss';
+@import './jokes.scss';
