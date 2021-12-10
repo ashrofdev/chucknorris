@@ -10,14 +10,15 @@ import './sytles/App.scss';
 function App() {
 
   const [category, setCategory] = useState('')
+  const [filter, setFilter] = useState('')
 
  
   return (
     <div className="App">
       <Header/>
-      <Hero/>
+      <Hero setFilter={setFilter} />
       <Categories setCategory={setCategory}/>
-      <Jokes category={category} />
+      <Jokes filter={filter} category={category} />
       <Footer/>
     </div>
   );

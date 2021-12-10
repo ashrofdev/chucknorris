@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-const Hero = () => {
+const Hero = ({setFilter}) => {
+
+    const [search, setSearch] = useState('')
     return (
         <div className="hero">
             
@@ -8,7 +12,10 @@ const Hero = () => {
             <h3>Daily laughs for you and yours</h3>
 
             <div className="filter-section">
-                <input className="input" placeholder="How can we make you laugh today"/>
+                <input onChange={(e)=> setSearch(e.target.value)} className="input" placeholder="How can we make you laugh today"/>
+                <div className="icon" onClick={()=> setFilter(search)}>
+                    <FontAwesomeIcon icon={faSearch} />
+                </div>
             </div>
         </div>
     );

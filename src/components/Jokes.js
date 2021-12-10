@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { getJokeByCategory, searchJokes } from './ApiCalls';
 
-const Jokes = ({category}) => {
+const Jokes = ({category, filter}) => {
 
     const [jokes, setJokes] = useState([])
     const [page, setPage] = useState(0)
 
     useEffect(()=>{
-        getDefaultJokes('cat')
-    },[])
+        if(filter===''){
+            getDefaultJokes('cat')
+        }else {
+            getDefaultJokes(filter)
+        }
+        
+    },[filter])
 
     useEffect(()=>{
         getJokeByCategory(category).then(e=>{
