@@ -3,6 +3,10 @@
     background-color: $header-color;
     // padding: .5rem 1rem;
 
+    @media only screen and (max-width: $bpsmall) {
+        display: none;
+    }
+
     &  .header-nav {
 
         &  .list-container {

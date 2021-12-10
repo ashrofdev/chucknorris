@@ -17,11 +17,23 @@
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 1rem;
 
+        @media only screen and (max-width: $bptab) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media only screen and (max-width: $bpsmall) {
+            display: block;
+        }
+
         &  .joke {
             padding: 1rem;
             border: .1rem solid rgb(228, 228, 228);
             cursor: pointer;
             transition: all .3s;
+
+            @media only screen and (max-width: $bpsmall) {
+                margin-bottom: 1rem;
+            }
 
             &:hover {
                 box-shadow: .1rem .1rem .5rem rgb(233, 233, 233);

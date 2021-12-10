@@ -1,3 +1,12 @@
+@import './variables.scss';
+@import './categories.scss';
+@import './footer.scss';
+@import './header.scss';
+@import './hero.scss';
+@import './joke.scss';
+@import './jokes.scss';
+
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +19,12 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: minmax(1rem, 1fr) repeat(8, 10rem) minmax(1rem, 1fr);
+    grid-template-columns: minmax(1rem, 1fr) repeat(8, minmax(6.5rem, 10rem)) minmax(1rem, 1fr);
+
+    @media only screen and (max-width: $bptab) {
+        display: block;
+        padding: 1rem;
+    }
 }
 
 .grid-content {
@@ -21,10 +35,4 @@ p {
     font-size: .9rem
 }
 
-@import './variables.scss';
-@import './categories.scss';
-@import './footer.scss';
-@import './header.scss';
-@import './hero.scss';
-@import './joke.scss';
-@import './jokes.scss';
+

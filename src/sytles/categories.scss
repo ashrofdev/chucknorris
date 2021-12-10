@@ -6,12 +6,24 @@
         grid-template-columns: repeat(5, 1fr);
         grid-gap: 1.5rem;
 
+        @media only screen and (max-width: $bptab) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media only screen and (max-width: $bpsmall) {
+            display: block;
+        }
+
         &  .category {
             padding: 1rem 2rem;
             background-color: red;
             text-align: center;
             color: $white;
             cursor: pointer;
+
+            @media only screen and (max-width: $bpsmall) {
+                margin-top: 1rem;
+            }
         }
     }
 }
