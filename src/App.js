@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Redirect } from 'react-router-dom';
 import { getCategories } from './ApiCalls';
 import Categories from './components/Categories';
 import Footer from './components/Footer';

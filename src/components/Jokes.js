@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { getJokeByCategory, searchJokes } from '../ApiCalls';
-import {useNavigate} from 'react-router-dom'
 
 const Jokes = ({category, filter, setRoute, setSelectedJoke}) => {
 
