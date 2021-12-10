@@ -1,0 +1,16 @@
+.categories {
+    padding: 5rem 0;
+
+    &  .items {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 1.5rem;
+
+        &  .category {
+            padding: 1rem 2rem;
+            background-color: red;
+            text-align: center;
+            color: $white;
+        }
+    }
+}

@@ -1,3 +1,4 @@
+import Categories from './components/Categories';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import './sytles/App.scss';
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <Header/>
       <Hero/>
+      <Categories/>
     </div>
   );
 }
