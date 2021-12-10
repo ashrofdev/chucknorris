@@ -1,0 +1,21 @@
+.header {
+    color: $white;
+    background-color: $header-color;
+    // padding: .5rem 1rem;
+
+    &  .header-nav {
+
+        &  .list-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            list-style: none;
+                text-transform: uppercase;
+
+            &  .item {
+                padding: 1.5rem 2.5em;
+                cursor: pointer;
+            }
+        }
+    }
+}
