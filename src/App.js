@@ -13,24 +13,26 @@ function App() {
 
   const [category, setCategory] = useState('')
   const [filter, setFilter] = useState('')
+  const [route, setRoute] = useState('')
+  const [selectedJoke, setSelectedJoke] = useState({})
 
  
   return (
     <div className="App">
       <Header/>
       <Hero setFilter={setFilter} />
-      <Router>
-        <Routes>
-          <Route path='/joke' element={<Joke/>}/>
-          <Route path='/' element={
+    
+          {
+            route==='joke'?
+            <Joke selectedJoke={selectedJoke}/>:
             <div>
             <Categories setCategory={setCategory}/>
-             <Jokes filter={filter} category={category} />
+             <Jokes setSelectedJoke={setSelectedJoke} setRoute={setRoute} filter={filter} category={category} />
             </div>
-          }/>
+          }
+
            
-        </Routes>
-      </Router>
+           
       <Footer/>
     </div>
   );

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const Joke = (props) => {
-    const history = useNavigate()
-    const [joke, setJoke] = useState({})
+const Joke = ({selectedJoke}) => {
+    // const history = useNavigate()
+    const joke = selectedJoke
 
     useEffect(()=>{
-        console.log(history)
-        setJoke(window.history.state.usr)
+        // console.log(history)
+        // setJoke(window.history.state.usr)
     },[])
     return (
         <div className="grid single-joke">

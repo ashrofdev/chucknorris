@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { getJokeByCategory, searchJokes } from '../ApiCalls';
 import {useNavigate} from 'react-router-dom'
 
-const Jokes = ({category, filter}) => {
+const Jokes = ({category, filter, setRoute, setSelectedJoke}) => {
 
     const [jokes, setJokes] = useState([])
     const [page, setPage] = useState(0)
-    const history = useNavigate()
+    // const history = useNavigate()
 
     useEffect(()=>{
         
@@ -40,7 +40,10 @@ const Jokes = ({category, filter}) => {
 
                 <div className="joke-list">
                     {
-                        jokes.map(joke=> <div onClick={()=> history("/joke", { state: joke })} className="joke">
+                        jokes.map(joke=> <div onClick={()=> {
+                            setSelectedJoke(joke)
+                            setRoute('joke')
+                            }} className="joke">
                                             <h3>{joke.categories[0] || 'Random'} joke</h3>
                                             <p>{joke.value}</p>
 
