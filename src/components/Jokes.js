@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { getJokeByCategory, searchJokes } from './ApiCalls';
+import { getJokeByCategory, searchJokes } from '../ApiCalls';
+import {useNavigate} from 'react-router-dom'
 
 const Jokes = ({category, filter}) => {
 
     const [jokes, setJokes] = useState([])
     const [page, setPage] = useState(0)
+    const history = useNavigate()
 
     useEffect(()=>{
+        
         if(filter===''){
             getDefaultJokes('cat')
         }else {
@@ -19,6 +22,7 @@ const Jokes = ({category, filter}) => {
         getJokeByCategory(category).then(e=>{
             console.log(e.data)
             setJokes([e.data])
+            setPage(0)
         })
     },[category])
 
@@ -36,7 +40,7 @@ const Jokes = ({category, filter}) => {
 
                 <div className="joke-list">
                     {
-                        jokes.map(joke=> <div className="joke">
+                        jokes.map(joke=> <div onClick={()=> history("/joke", { state: joke })} className="joke">
                                             <h3>{joke.categories[0] || 'Random'} joke</h3>
                                             <p>{joke.value}</p>
 

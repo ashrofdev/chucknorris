@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getCategories } from './ApiCalls';
+import { getCategories } from '../ApiCalls';
 
 const Categories = ({setCategory}) => {
 
