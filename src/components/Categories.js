@@ -1,30 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getCategories } from './ApiCalls';
 
-const Categories = () => {
+const Categories = ({setCategory}) => {
+
+    const [categories, setCategories] = useState([])
+
+    useEffect(()=>{
+        getCategories().then(e=>{
+            console.log(e.data,'llll')
+            setCategories(e.data)
+        })
+        console.log(getCategories())
+        
+      },[])
+    
     return (
         <div className="grid categories">
             <div className="grid-content items">
-                <div className="category">
-                    Adilt jokes
-                </div>
-                <div className="category">
-                    Adilt jokes
-                </div>
-                <div className="category">
-                    Adilt jokes
-                </div>
-                <div className="category">
-                    Adilt jokes
-                </div>
-                <div className="category">
-                    Adilt jokes
-                </div>
-                <div className="category">
-                    Adilt jokes
-                </div>
-                <div className="category">
-                    Adilt jokes
-                </div>
+                {
+                    categories.map(category=> <div onClick={()=> setCategory(category)} className="category">
+                                                    {category}
+                                                </div>)
+                }
             </div>
         </div>
     );
